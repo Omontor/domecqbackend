@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Bitter Mobile Template</title>
-    <link rel="stylesheet" href="/template/assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <meta name="viewport"
         content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
     <meta name="description" content="Bitter Mobile Template">
     <meta name="keywords" content="bootstrap, mobile template, Bootstrap 5, mobile, html, responsive" />
-    <link rel="icon" type="image/png" href="/template/assets/img/icon/favicon.png" sizes="32x32">
-    <link rel="apple-touch-icon" sizes="180x180" href="/template/assets/img/icon/192x192.png">
+    <link rel="icon" type="image/png" href="assets/img/icon/favicon.png" sizes="32x32">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/icon/192x192.png">
 </head>
 
 <body>
@@ -25,13 +25,11 @@
     <!-- App Header -->
     <div class="appHeader">
         <div class="left">
-            <a href="#appSidebar" class="icon" data-bs-toggle="offcanvas">
-                <i class="icon ion-ios-menu"></i>
+            <a href="javascript:;" class="icon goBack">
+                <i class="icon ion-ios-arrow-back"></i>
             </a>
         </div>
-        <div class="pageTitle">
-            <img src="assets/img/logo.png" alt="Bitter" class="image">
-        </div>
+        <div class="pageTitle">Chips</div>
         <div class="right">
             <label for="searchInput" class="mb-0 icon toggleSearchbox">
                 <i class="icon ion-ios-search"></i>
@@ -55,18 +53,83 @@
 
     <!-- App Capsule -->
     <div id="appCapsule">
+
         <div class="appContent">
-            @yield('content')
+
+
+            <div class="card mt-2 mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Chips With Text</h5>
+                    <span class="badge badge-primary me-1 mb-1">Primary</span>
+                    <span class="badge badge-secondary me-1 mb-1">Secondary</span>
+                    <span class="badge badge-success me-1 mb-1">Success</span>
+                    <span class="badge badge-danger me-1 mb-1">Danger</span>
+                    <span class="badge badge-warning me-1 mb-1">Warning</span>
+                    <span class="badge badge-info me-1 mb-1">Info</span>
+                    <span class="badge badge-light me-1 mb-1">Light</span>
+                    <span class="badge badge-dark me-1 mb-1">Dark</span>
+                </div>
+            </div>
+
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Outline Chips</h5>
+                    <span class="badge badge-outline-primary me-1 mb-1">Primary</span>
+                    <span class="badge badge-outline-secondary me-1 mb-1">Secondary</span>
+                    <span class="badge badge-outline-success me-1 mb-1">Success</span>
+                    <span class="badge badge-outline-danger me-1 mb-1">Danger</span>
+                    <span class="badge badge-outline-warning me-1 mb-1">Warning</span>
+                    <span class="badge badge-outline-info me-1 mb-1">Info</span>
+                    <span class="badge badge-outline-light me-1 mb-1">Light</span>
+                    <span class="badge badge-outline-dark me-1 mb-1">Dark</span>
+                </div>
+            </div>
+
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Chips With Text</h5>
+                    <span class="badge badge-primary iconed me-1 mb-1">
+                        <i class="icon ion-ios-add"></i>
+                        Add
+                    </span>
+                    <span class="badge badge-success iconed me-1 mb-1">
+                        <i class="icon ion-ios-person"></i>
+                        John
+                    </span>
+                    <span class="badge badge-danger iconed me-1 mb-1">
+                        <i class="icon ion-ios-pin"></i>
+                        Danger
+                    </span>
+                </div>
+            </div>
+
+            <div class="card mb-1">
+                <div class="card-body">
+                    <h5 class="card-title">Chips With Image</h5>
+                    <span class="badge badge-primary imaged me-1 mb-1">
+                        <img src="assets/img/sample/avatar.jpg" alt="avatar">
+                        Jane
+                    </span>
+                    <span class="badge badge-success imaged me-1 mb-1">
+                        <img src="assets/img/sample/avatar2.jpg" alt="avatar">
+                        Max
+                    </span>
+                    <span class="badge badge-danger imaged me-1 mb-1">
+                        <img src="assets/img/sample/avatar3.jpg" alt="avatar">
+                        Alex
+                    </span>
+                </div>
+            </div>
+
+
         </div>
 
-</div>
-<!-- app Footer -->
+        <!-- app Footer -->
         <footer class="appFooter">
             <div class="heading">Copyright © Bitter. All Rights Reserved.</div>
             <p>
                 Modern, simple and elegant design for mobile devices. Based on Bootstrap.
             </p>
-            {{--
             <!-- facebook -->
             <a href="#" class="btn btn-facebook btn-icon me-1">
                 <i class="icon ion-logo-facebook"></i>
@@ -87,18 +150,57 @@
             <a href="#" class="btn btn-whatsapp btn-icon me-1">
                 <i class="icon ion-logo-whatsapp"></i>
             </a>
-            --}}
         </footer>
         <!-- * app Footer -->
 
-
     </div>
-    <!-- * appCapsule -->
+    <!-- appCapsule -->
 
 
-
-
-    @include('partials.nav')
+    <!-- App Bottom Menu -->
+    <div class="appBottomMenu">
+        <div class="item">
+            <a href="index.html">
+                <p>
+                    <i class="icon ion-ios-water"></i>
+                    <span>Home</span>
+                </p>
+            </a>
+        </div>
+        <div class="item">
+            <a href="pages.html">
+                <p>
+                    <i class="icon ion-ios-apps"></i>
+                    <span>Pages</span>
+                </p>
+            </a>
+        </div>
+        <div class="item active">
+            <a href="components.html">
+                <p>
+                    <i class="icon ion-ios-analytics"></i>
+                    <span>Components</span>
+                </p>
+            </a>
+        </div>
+        <div class="item">
+            <a href="search.html">
+                <p>
+                    <i class="icon ion-ios-search"></i>
+                    <span>Search</span>
+                </p>
+            </a>
+        </div>
+        <div class="item">
+            <a href="#appSidebar" class="icon" data-bs-toggle="offcanvas">
+                <p>
+                    <i class="icon ion-ios-menu"></i>
+                    <span>Menu</span>
+                </p>
+            </a>
+        </div>
+    </div>
+    <!-- * App Bottom Menu -->
 
     <!-- Sidebar Menu -->
     <div class="offcanvas offcanvas-start sidebarWrapper" tabindex="-1" id="appSidebar">
@@ -199,17 +301,15 @@
     </div>
     <!-- * Sidebar Menu -->
 
-
     <!-- ///////////// Js Files ////////////////////  -->
     <!-- Bootstrap-->
-    <script src="/template/assets/js/lib/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/lib/bootstrap.bundle.min.js"></script>
     <!-- Splide -->
-    <script src="/template/assets/js/plugins/splide/splide.min.js"></script>
+    <script src="assets/js/plugins/splide/splide.min.js"></script>
     <!-- Main Js File -->
-    <script src="/template/assets/js/app.js"></script>
+    <script src="assets/js/app.js"></script>
 
 
 </body>
 
 </html>
-

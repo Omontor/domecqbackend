@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Bitter Mobile Template</title>
-    <link rel="stylesheet" href="/template/assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <meta name="viewport"
         content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
     <meta name="description" content="Bitter Mobile Template">
     <meta name="keywords" content="bootstrap, mobile template, Bootstrap 5, mobile, html, responsive" />
-    <link rel="icon" type="image/png" href="/template/assets/img/icon/favicon.png" sizes="32x32">
-    <link rel="apple-touch-icon" sizes="180x180" href="/template/assets/img/icon/192x192.png">
+    <link rel="icon" type="image/png" href="assets/img/icon/favicon.png" sizes="32x32">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/icon/192x192.png">
 </head>
 
 <body>
@@ -25,13 +25,11 @@
     <!-- App Header -->
     <div class="appHeader">
         <div class="left">
-            <a href="#appSidebar" class="icon" data-bs-toggle="offcanvas">
-                <i class="icon ion-ios-menu"></i>
+            <a href="#" class="icon goBack">
+                <i class="icon ion-ios-arrow-back"></i>
             </a>
         </div>
-        <div class="pageTitle">
-            <img src="assets/img/logo.png" alt="Bitter" class="image">
-        </div>
+        <div class="pageTitle">Sports</div>
         <div class="right">
             <label for="searchInput" class="mb-0 icon toggleSearchbox">
                 <i class="icon ion-ios-search"></i>
@@ -55,18 +53,108 @@
 
     <!-- App Capsule -->
     <div id="appCapsule">
+
         <div class="appContent">
-            @yield('content')
+
+
+            <!-- post list -->
+            <div class="row mt-2">
+                <!-- item -->
+                <div class="col-6">
+                    <a href="blog-post.html" class="postItem">
+                        <div class="imageWrapper">
+                            <img src="assets/img/sample/photo11.jpg" alt="image" class="image">
+                        </div>
+                        <h2 class="title">Juxon praises Peri’s resilience after testing week</h2>
+                    </a>
+                </div>
+                <!-- * item -->
+                <!-- item -->
+                <div class="col-6">
+                    <a href="blog-post.html" class="postItem">
+                        <div class="imageWrapper">
+                            <img src="assets/img/sample/photo8.jpg" alt="image" class="image">
+                        </div>
+                        <h2 class="title">Top 10 Travel Bloggers You Should Follow</h2>
+                    </a>
+                </div>
+                <!-- * item -->
+                <!-- item -->
+                <div class="col-6">
+                    <a href="blog-post.html" class="postItem">
+                        <div class="imageWrapper">
+                            <img src="assets/img/sample/photo3.jpg" alt="image" class="image">
+                        </div>
+                        <h2 class="title">Is Orange Juice the Enemy of the Disease?</h2>
+                    </a>
+                </div>
+                <!-- * item -->
+                <!-- item -->
+                <div class="col-6">
+                    <a href="blog-post.html" class="postItem">
+                        <div class="imageWrapper">
+                            <img src="assets/img/sample/photo4.jpg" alt="image" class="image">
+                        </div>
+                        <h2 class="title">Check the Best Selling Furniture of This Year</h2>
+                    </a>
+                </div>
+                <!-- * item -->
+                <!-- item -->
+                <div class="col-6">
+                    <a href="blog-post.html" class="postItem">
+                        <div class="imageWrapper">
+                            <img src="assets/img/sample/photo12.jpg" alt="image" class="image">
+                        </div>
+                        <h2 class="title">The World's Largest Pillow Fight is Also a Festival</h2>
+                    </a>
+                </div>
+                <!-- * item -->
+                <!-- item -->
+                <div class="col-6">
+                    <a href="blog-post.html" class="postItem">
+                        <div class="imageWrapper">
+                            <img src="assets/img/sample/photo13.jpg" alt="image" class="image">
+                        </div>
+                        <h2 class="title">Best of Skyscrapers in the World</h2>
+                    </a>
+                </div>
+                <!-- * item -->
+                <!-- item -->
+                <div class="col-6">
+                    <a href="blog-post.html" class="postItem">
+                        <div class="imageWrapper">
+                            <img src="assets/img/sample/photo14.jpg" alt="image" class="image">
+                        </div>
+                        <h2 class="title">Is Orange Juice the Enemy of the Disease?</h2>
+                    </a>
+                </div>
+                <!-- * item -->
+                <!-- item -->
+                <div class="col-6">
+                    <a href="blog-post.html" class="postItem">
+                        <div class="imageWrapper">
+                            <img src="assets/img/sample/photo2.jpg" alt="image" class="image">
+                        </div>
+                        <h2 class="title">Check the Best Selling Furniture of This Year</h2>
+                    </a>
+                </div>
+                <!-- * item -->
+            </div>
+            <!-- * post list -->
+
+            <div class="mt-2 mb-2">
+                <a href="javascript:;" class="btn btn-primary btn-lg btn-block">Load More</a>
+            </div>
+
+
         </div>
 
-</div>
-<!-- app Footer -->
+        <!-- app Footer -->
         <footer class="appFooter">
             <div class="heading">Copyright © Bitter. All Rights Reserved.</div>
             <p>
                 Modern, simple and elegant design for mobile devices. Based on Bootstrap.
             </p>
-            {{--
             <!-- facebook -->
             <a href="#" class="btn btn-facebook btn-icon me-1">
                 <i class="icon ion-logo-facebook"></i>
@@ -87,7 +175,6 @@
             <a href="#" class="btn btn-whatsapp btn-icon me-1">
                 <i class="icon ion-logo-whatsapp"></i>
             </a>
-            --}}
         </footer>
         <!-- * app Footer -->
 
@@ -98,7 +185,50 @@
 
 
 
-    @include('partials.nav')
+    <!-- App Bottom Menu -->
+    <div class="appBottomMenu">
+        <div class="item">
+            <a href="index.html">
+                <p>
+                    <i class="icon ion-ios-water"></i>
+                    <span>Home</span>
+                </p>
+            </a>
+        </div>
+        <div class="item">
+            <a href="pages.html">
+                <p>
+                    <i class="icon ion-ios-apps"></i>
+                    <span>Pages</span>
+                </p>
+            </a>
+        </div>
+        <div class="item">
+            <a href="components.html">
+                <p>
+                    <i class="icon ion-ios-analytics"></i>
+                    <span>Components</span>
+                </p>
+            </a>
+        </div>
+        <div class="item">
+            <a href="search.html">
+                <p>
+                    <i class="icon ion-ios-search"></i>
+                    <span>Search</span>
+                </p>
+            </a>
+        </div>
+        <div class="item">
+            <a href="#appSidebar" class="icon" data-bs-toggle="offcanvas">
+                <p>
+                    <i class="icon ion-ios-menu"></i>
+                    <span>Menu</span>
+                </p>
+            </a>
+        </div>
+    </div>
+    <!-- * App Bottom Menu -->
 
     <!-- Sidebar Menu -->
     <div class="offcanvas offcanvas-start sidebarWrapper" tabindex="-1" id="appSidebar">
@@ -199,17 +329,15 @@
     </div>
     <!-- * Sidebar Menu -->
 
-
     <!-- ///////////// Js Files ////////////////////  -->
     <!-- Bootstrap-->
-    <script src="/template/assets/js/lib/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/lib/bootstrap.bundle.min.js"></script>
     <!-- Splide -->
-    <script src="/template/assets/js/plugins/splide/splide.min.js"></script>
+    <script src="assets/js/plugins/splide/splide.min.js"></script>
     <!-- Main Js File -->
-    <script src="/template/assets/js/app.js"></script>
+    <script src="assets/js/app.js"></script>
 
 
 </body>
 
 </html>
-

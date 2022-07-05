@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Bitter Mobile Template</title>
-    <link rel="stylesheet" href="/template/assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <meta name="viewport"
         content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
     <meta name="description" content="Bitter Mobile Template">
     <meta name="keywords" content="bootstrap, mobile template, Bootstrap 5, mobile, html, responsive" />
-    <link rel="icon" type="image/png" href="/template/assets/img/icon/favicon.png" sizes="32x32">
-    <link rel="apple-touch-icon" sizes="180x180" href="/template/assets/img/icon/192x192.png">
+    <link rel="icon" type="image/png" href="assets/img/icon/favicon.png" sizes="32x32">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/icon/192x192.png">
 </head>
 
 <body>
@@ -31,7 +31,7 @@
         </div>
         <div class="pageTitle">Login</div>
         <div class="right">
-            <a href="/register" class="link">Registrarse</a>
+            <a href="page-register.html" class="link">Register</a>
         </div>
     </div>
     <!-- searchBox -->
@@ -57,54 +57,55 @@
 
             <div class="sectionTitle text-center mt-3">
                 <div class="title">
-                    <h1>Bienvenido</h1>
+                    <h1>Welcome Back</h1>
                 </div>
-                <div class="lead mb-2">Inicia Sesión Para Continuar</div>
+                <div class="lead mb-2">Sign in to continue</div>
             </div>
 
-<form action="{{ route('login') }}" method="POST">
-                @csrf
-
+            <form action="index.html">
                 <div class="form-group">
-                    <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" required autocomplete="email" autofocus placeholder="{{ trans('global.login_email') }}" name="email" value="{{ old('email', null) }}">
-
-                    @if($errors->has('email'))
-                        <div class="invalid-feedback">
-                            {{ $errors->first('email') }}
-                        </div>
-                    @endif
+                    <input type="email" class="form-control" placeholder="E-mail">
                 </div>
-
                 <div class="form-group">
-                    <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required placeholder="{{ trans('global.login_password') }}">
-
-                    @if($errors->has('password'))
-                        <div class="invalid-feedback">
-                            {{ $errors->first('password') }}
-                        </div>
-                    @endif
+                    <input type="password" class="form-control" placeholder="Password">
                 </div>
-
-<hr>
-                <div class="row">
-                    <div class="col-8">
-                        <div class="icheck-primary">
-                            <input type="checkbox" name="remember" id="remember">
-                            <label for="remember">{{ trans('global.remember_me') }}</label>
+                <div class="form-group row mt-3 mb-3">
+                    <div class="col-6">
+                        <div class="form-check mb-1">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheck1">
+                            <label class="form-check-label" for="flexCheck1">
+                                Remember me
+                            </label>
                         </div>
                     </div>
-                    <br>
-                    <br>
-                    <!-- /.col -->
-                                    <div>
+                    <div class="col-6 text-end">
+                        <a href="page-forgot-password.html" class="text-muted">Forgot password?</a>
+                    </div>
+                </div>
+                <div>
                     <button type="submit" class="btn btn-primary btn-lg btn-block">
                         Sign in
                     </button>
                 </div>
-                    <!-- /.col -->
-                </div>
             </form>
             <div class="divider mt-3 mb-3"></div>
+
+            <div class="text-muted text-center mb-2">or login with</div>
+            <div class="row">
+                <div class="col-6">
+                    <button type="button" class="btn btn-facebook btn-block">
+                        <i class="icon ion-logo-facebook"></i>
+                        Facebook
+                    </button>
+                </div>
+                <div class="col-6">
+                    <button type="button" class="btn btn-twitter btn-block">
+                        <i class="icon ion-logo-twitter"></i>
+                        Twitter
+                    </button>
+                </div>
+            </div>
+
 
         </div>
 
@@ -115,11 +116,11 @@
 
     <!-- ///////////// Js Files ////////////////////  -->
     <!-- Bootstrap-->
-    <script src="/template/assets/js/lib/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/lib/bootstrap.bundle.min.js"></script>
     <!-- Splide -->
-    <script src="/template/assets/js/plugins/splide/splide.min.js"></script>
+    <script src="assets/js/plugins/splide/splide.min.js"></script>
     <!-- Main Js File -->
-    <script src="/template/assets/js/app.js"></script>
+    <script src="assets/js/app.js"></script>
 
 
 </body>
