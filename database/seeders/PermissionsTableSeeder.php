@@ -456,6 +456,26 @@ class PermissionsTableSeeder extends Seeder
             ],
             [
                 'id'    => 112,
+                'title' => 'appointment_create',
+            ],
+            [
+                'id'    => 113,
+                'title' => 'appointment_edit',
+            ],
+            [
+                'id'    => 114,
+                'title' => 'appointment_show',
+            ],
+            [
+                'id'    => 115,
+                'title' => 'appointment_delete',
+            ],
+            [
+                'id'    => 116,
+                'title' => 'appointment_access',
+            ],
+            [
+                'id'    => 117,
                 'title' => 'profile_password_edit',
             ],
         ];

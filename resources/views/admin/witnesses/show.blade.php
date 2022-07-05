@@ -43,6 +43,14 @@
                             @endif
                         </td>
                     </tr>
+                    <tr>
+                        <th>
+                            {{ trans('cruds.witness.fields.appointment') }}
+                        </th>
+                        <td>
+                            {{ $witness->appointment->title ?? '' }}
+                        </td>
+                    </tr>
                 </tbody>
             </table>
             <div class="form-group">

@@ -107,6 +107,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::delete('visit-reports/destroy', 'VisitReportController@massDestroy')->name('visit-reports.massDestroy');
     Route::resource('visit-reports', 'VisitReportController');
 
+    // Appointment
+    Route::delete('appointments/destroy', 'AppointmentController@massDestroy')->name('appointments.massDestroy');
+    Route::resource('appointments', 'AppointmentController');
+
     Route::get('system-calendar', 'SystemCalendarController@index')->name('systemCalendar');
     Route::get('global-search', 'GlobalSearchController@search')->name('globalSearch');
     Route::get('messenger', 'MessengerController@index')->name('messenger.index');
@@ -222,6 +226,10 @@ Route::group(['as' => 'frontend.', 'namespace' => 'Frontend', 'middleware' => ['
     // Visit Report
     Route::delete('visit-reports/destroy', 'VisitReportController@massDestroy')->name('visit-reports.massDestroy');
     Route::resource('visit-reports', 'VisitReportController');
+
+    // Appointment
+    Route::delete('appointments/destroy', 'AppointmentController@massDestroy')->name('appointments.massDestroy');
+    Route::resource('appointments', 'AppointmentController');
 
     Route::get('frontend/profile', 'ProfileController@index')->name('profile.index');
     Route::post('frontend/profile', 'ProfileController@update')->name('profile.update');
