@@ -6,8 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\MassDestroyVisitReportRequest;
 use App\Http\Requests\StoreVisitReportRequest;
 use App\Http\Requests\UpdateVisitReportRequest;
-use App\Models\Checkin;
-use App\Models\Checkout;
 use App\Models\Client;
 use App\Models\User;
 use App\Models\Variante;
@@ -22,7 +20,7 @@ class VisitReportController extends Controller
     {
         abort_if(Gate::denies('visit_report_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $visitReports = VisitReport::with(['user', 'client', 'checkin', 'checkout', 'productos'])->get();
+        $visitReports = VisitReport::with(['user', 'client', 'productos'])->get();
 
         return view('admin.visitReports.index', compact('visitReports'));
     }
@@ -35,13 +33,9 @@ class VisitReportController extends Controller
 
         $clients = Client::pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        $checkins = Checkin::pluck('datetime', 'id')->prepend(trans('global.pleaseSelect'), '');
-
-        $checkouts = Checkout::pluck('datetime', 'id')->prepend(trans('global.pleaseSelect'), '');
-
         $productos = Variante::pluck('producto', 'id');
 
-        return view('admin.visitReports.create', compact('checkins', 'checkouts', 'clients', 'productos', 'users'));
+        return view('admin.visitReports.create', compact('clients', 'productos', 'users'));
     }
 
     public function store(StoreVisitReportRequest $request)
@@ -60,15 +54,11 @@ class VisitReportController extends Controller
 
         $clients = Client::pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        $checkins = Checkin::pluck('datetime', 'id')->prepend(trans('global.pleaseSelect'), '');
-
-        $checkouts = Checkout::pluck('datetime', 'id')->prepend(trans('global.pleaseSelect'), '');
-
         $productos = Variante::pluck('producto', 'id');
 
-        $visitReport->load('user', 'client', 'checkin', 'checkout', 'productos');
+        $visitReport->load('user', 'client', 'productos');
 
-        return view('admin.visitReports.edit', compact('checkins', 'checkouts', 'clients', 'productos', 'users', 'visitReport'));
+        return view('admin.visitReports.edit', compact('clients', 'productos', 'users', 'visitReport'));
     }
 
     public function update(UpdateVisitReportRequest $request, VisitReport $visitReport)
@@ -83,7 +73,7 @@ class VisitReportController extends Controller
     {
         abort_if(Gate::denies('visit_report_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $visitReport->load('user', 'client', 'checkin', 'checkout', 'productos');
+        $visitReport->load('user', 'client', 'productos');
 
         return view('admin.visitReports.show', compact('visitReport'));
     }

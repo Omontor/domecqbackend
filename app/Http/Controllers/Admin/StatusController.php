@@ -54,6 +54,8 @@ class StatusController extends Controller
     {
         abort_if(Gate::denies('status_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
+        $status->load('statusAppointments');
+
         return view('admin.statuses.show', compact('status'));
     }
 

@@ -41,22 +41,6 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.visitReport.fields.checkin') }}
-                        </th>
-                        <td>
-                            {{ $visitReport->checkin->datetime ?? '' }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
-                            {{ trans('cruds.visitReport.fields.checkout') }}
-                        </th>
-                        <td>
-                            {{ $visitReport->checkout->datetime ?? '' }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
                             {{ trans('cruds.visitReport.fields.productos') }}
                         </th>
                         <td>

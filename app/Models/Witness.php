@@ -30,6 +30,7 @@ class Witness extends Model implements HasMedia
 
     protected $fillable = [
         'witness_category_id',
+        'appointment_id',
         'created_at',
         'updated_at',
         'deleted_at',
@@ -56,6 +57,11 @@ class Witness extends Model implements HasMedia
         }
 
         return $file;
+    }
+
+    public function appointment()
+    {
+        return $this->belongsTo(Appointment::class, 'appointment_id');
     }
 
     protected function serializeDate(DateTimeInterface $date)

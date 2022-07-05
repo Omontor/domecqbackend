@@ -7,6 +7,7 @@ use App\Http\Controllers\Traits\MediaUploadingTrait;
 use App\Http\Requests\MassDestroyWitnessRequest;
 use App\Http\Requests\StoreWitnessRequest;
 use App\Http\Requests\UpdateWitnessRequest;
+use App\Models\Appointment;
 use App\Models\Witness;
 use App\Models\WitnessCategory;
 use Gate;
@@ -22,7 +23,7 @@ class WitnessController extends Controller
     {
         abort_if(Gate::denies('witness_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $witnesses = Witness::with(['witness_category', 'media'])->get();
+        $witnesses = Witness::with(['witness_category', 'appointment', 'media'])->get();
 
         return view('frontend.witnesses.index', compact('witnesses'));
     }
@@ -33,7 +34,9 @@ class WitnessController extends Controller
 
         $witness_categories = WitnessCategory::pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        return view('frontend.witnesses.create', compact('witness_categories'));
+        $appointments = Appointment::pluck('title', 'id')->prepend(trans('global.pleaseSelect'), '');
+
+        return view('frontend.witnesses.create', compact('appointments', 'witness_categories'));
     }
 
     public function store(StoreWitnessRequest $request)
@@ -57,9 +60,11 @@ class WitnessController extends Controller
 
         $witness_categories = WitnessCategory::pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        $witness->load('witness_category');
+        $appointments = Appointment::pluck('title', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        return view('frontend.witnesses.edit', compact('witness', 'witness_categories'));
+        $witness->load('witness_category', 'appointment');
+
+        return view('frontend.witnesses.edit', compact('appointments', 'witness', 'witness_categories'));
     }
 
     public function update(UpdateWitnessRequest $request, Witness $witness)
@@ -84,7 +89,7 @@ class WitnessController extends Controller
     {
         abort_if(Gate::denies('witness_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $witness->load('witness_category');
+        $witness->load('witness_category', 'appointment');
 
         return view('frontend.witnesses.show', compact('witness'));
     }
