@@ -89,7 +89,7 @@
                     </li>
                 @endcan
                 @can('visit_management_access')
-                    <li class="nav-item has-treeview {{ request()->is("admin/witnesses*") ? "menu-open" : "" }} {{ request()->is("admin/checkins*") ? "menu-open" : "" }} {{ request()->is("admin/checkouts*") ? "menu-open" : "" }} {{ request()->is("admin/visit-reports*") ? "menu-open" : "" }}">
+                    <li class="nav-item has-treeview {{ request()->is("admin/witnesses*") ? "menu-open" : "" }} {{ request()->is("admin/checkins*") ? "menu-open" : "" }} {{ request()->is("admin/checkouts*") ? "menu-open" : "" }} {{ request()->is("admin/appointments*") ? "menu-open" : "" }} {{ request()->is("admin/visit-reports*") ? "menu-open" : "" }}">
                         <a class="nav-link nav-dropdown-toggle" href="#">
                             <i class="fa-fw nav-icon fas fa-map-pin">
 
@@ -132,6 +132,18 @@
                                         </i>
                                         <p>
                                             {{ trans('cruds.checkout.title') }}
+                                        </p>
+                                    </a>
+                                </li>
+                            @endcan
+                            @can('appointment_access')
+                                <li class="nav-item">
+                                    <a href="{{ route("admin.appointments.index") }}" class="nav-link {{ request()->is("admin/appointments") || request()->is("admin/appointments/*") ? "active" : "" }}">
+                                        <i class="fa-fw nav-icon fas fa-calendar-check">
+
+                                        </i>
+                                        <p>
+                                            {{ trans('cruds.appointment.title') }}
                                         </p>
                                     </a>
                                 </li>
@@ -362,6 +374,33 @@
                                 {{ trans('cruds.userAlert.title') }}
                             </p>
                         </a>
+                    </li>
+                @endcan
+                @can('communication_management_access')
+                    <li class="nav-item has-treeview {{ request()->is("admin/blogs*") ? "menu-open" : "" }}">
+                        <a class="nav-link nav-dropdown-toggle" href="#">
+                            <i class="fa-fw nav-icon fas fa-comment">
+
+                            </i>
+                            <p>
+                                {{ trans('cruds.communicationManagement.title') }}
+                                <i class="right fa fa-fw fa-angle-left nav-icon"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            @can('blog_access')
+                                <li class="nav-item">
+                                    <a href="{{ route("admin.blogs.index") }}" class="nav-link {{ request()->is("admin/blogs") || request()->is("admin/blogs/*") ? "active" : "" }}">
+                                        <i class="fa-fw nav-icon fas fa-rss">
+
+                                        </i>
+                                        <p>
+                                            {{ trans('cruds.blog.title') }}
+                                        </p>
+                                    </a>
+                                </li>
+                            @endcan
+                        </ul>
                     </li>
                 @endcan
                 <li class="nav-item">

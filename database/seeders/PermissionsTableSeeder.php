@@ -456,6 +456,50 @@ class PermissionsTableSeeder extends Seeder
             ],
             [
                 'id'    => 112,
+                'title' => 'appointment_create',
+            ],
+            [
+                'id'    => 113,
+                'title' => 'appointment_edit',
+            ],
+            [
+                'id'    => 114,
+                'title' => 'appointment_show',
+            ],
+            [
+                'id'    => 115,
+                'title' => 'appointment_delete',
+            ],
+            [
+                'id'    => 116,
+                'title' => 'appointment_access',
+            ],
+            [
+                'id'    => 117,
+                'title' => 'communication_management_access',
+            ],
+            [
+                'id'    => 118,
+                'title' => 'blog_create',
+            ],
+            [
+                'id'    => 119,
+                'title' => 'blog_edit',
+            ],
+            [
+                'id'    => 120,
+                'title' => 'blog_show',
+            ],
+            [
+                'id'    => 121,
+                'title' => 'blog_delete',
+            ],
+            [
+                'id'    => 122,
+                'title' => 'blog_access',
+            ],
+            [
+                'id'    => 123,
                 'title' => 'profile_password_edit',
             ],
         ];

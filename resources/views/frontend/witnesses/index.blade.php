@@ -32,6 +32,9 @@
                                         {{ trans('cruds.witness.fields.witness') }}
                                     </th>
                                     <th>
+                                        {{ trans('cruds.witness.fields.appointment') }}
+                                    </th>
+                                    <th>
                                         &nbsp;
                                     </th>
                                 </tr>
@@ -51,6 +54,9 @@
                                                     <img src="{{ $witness->witness->getUrl('thumb') }}">
                                                 </a>
                                             @endif
+                                        </td>
+                                        <td>
+                                            {{ $witness->appointment->title ?? '' }}
                                         </td>
                                         <td>
                                             @can('witness_show')

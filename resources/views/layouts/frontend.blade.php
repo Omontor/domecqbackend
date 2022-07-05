@@ -122,6 +122,11 @@
                                             {{ trans('cruds.checkout.title') }}
                                         </a>
                                     @endcan
+                                    @can('appointment_access')
+                                        <a class="dropdown-item ml-3" href="{{ route('frontend.appointments.index') }}">
+                                            {{ trans('cruds.appointment.title') }}
+                                        </a>
+                                    @endcan
                                     @can('visit_report_access')
                                         <a class="dropdown-item ml-3" href="{{ route('frontend.visit-reports.index') }}">
                                             {{ trans('cruds.visitReport.title') }}
@@ -205,6 +210,16 @@
                                     @can('user_alert_access')
                                         <a class="dropdown-item" href="{{ route('frontend.user-alerts.index') }}">
                                             {{ trans('cruds.userAlert.title') }}
+                                        </a>
+                                    @endcan
+                                    @can('communication_management_access')
+                                        <a class="dropdown-item disabled" href="#">
+                                            {{ trans('cruds.communicationManagement.title') }}
+                                        </a>
+                                    @endcan
+                                    @can('blog_access')
+                                        <a class="dropdown-item ml-3" href="{{ route('frontend.blogs.index') }}">
+                                            {{ trans('cruds.blog.title') }}
                                         </a>
                                     @endcan
 

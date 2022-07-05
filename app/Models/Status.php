@@ -27,6 +27,11 @@ class Status extends Model
         'deleted_at',
     ];
 
+    public function statusAppointments()
+    {
+        return $this->hasMany(Appointment::class, 'status_id', 'id');
+    }
+
     protected function serializeDate(DateTimeInterface $date)
     {
         return $date->format('Y-m-d H:i:s');

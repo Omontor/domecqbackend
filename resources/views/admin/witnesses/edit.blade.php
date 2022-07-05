@@ -32,6 +32,18 @@
                 <span class="help-block">{{ trans('cruds.witness.fields.witness_helper') }}</span>
             </div>
             <div class="form-group">
+                <label for="appointment_id">{{ trans('cruds.witness.fields.appointment') }}</label>
+                <select class="form-control select2 {{ $errors->has('appointment') ? 'is-invalid' : '' }}" name="appointment_id" id="appointment_id">
+                    @foreach($appointments as $id => $entry)
+                        <option value="{{ $id }}" {{ (old('appointment_id') ? old('appointment_id') : $witness->appointment->id ?? '') == $id ? 'selected' : '' }}>{{ $entry }}</option>
+                    @endforeach
+                </select>
+                @if($errors->has('appointment'))
+                    <span class="text-danger">{{ $errors->first('appointment') }}</span>
+                @endif
+                <span class="help-block">{{ trans('cruds.witness.fields.appointment_helper') }}</span>
+            </div>
+            <div class="form-group">
                 <button class="btn btn-danger" type="submit">
                     {{ trans('global.save') }}
                 </button>
@@ -75,7 +87,7 @@
 @if(isset($witness) && $witness->witness)
       var file = {!! json_encode($witness->witness) !!}
           this.options.addedfile.call(this, file)
-      this.options.thumbnail.call(this, file, file.preview)
+      this.options.thumbnail.call(this, file, file.preview ?? file.preview_url)
       file.previewElement.classList.add('dz-complete')
       $('form').append('<input type="hidden" name="witness" value="' + file.file_name + '">')
       this.options.maxFiles = this.options.maxFiles - 1
@@ -98,5 +110,6 @@
         return _results
     }
 }
+
 </script>
 @endsection

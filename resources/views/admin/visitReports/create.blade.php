@@ -34,30 +34,6 @@
                 <span class="help-block">{{ trans('cruds.visitReport.fields.client_helper') }}</span>
             </div>
             <div class="form-group">
-                <label class="required" for="checkin_id">{{ trans('cruds.visitReport.fields.checkin') }}</label>
-                <select class="form-control select2 {{ $errors->has('checkin') ? 'is-invalid' : '' }}" name="checkin_id" id="checkin_id" required>
-                    @foreach($checkins as $id => $entry)
-                        <option value="{{ $id }}" {{ old('checkin_id') == $id ? 'selected' : '' }}>{{ $entry }}</option>
-                    @endforeach
-                </select>
-                @if($errors->has('checkin'))
-                    <span class="text-danger">{{ $errors->first('checkin') }}</span>
-                @endif
-                <span class="help-block">{{ trans('cruds.visitReport.fields.checkin_helper') }}</span>
-            </div>
-            <div class="form-group">
-                <label class="required" for="checkout_id">{{ trans('cruds.visitReport.fields.checkout') }}</label>
-                <select class="form-control select2 {{ $errors->has('checkout') ? 'is-invalid' : '' }}" name="checkout_id" id="checkout_id" required>
-                    @foreach($checkouts as $id => $entry)
-                        <option value="{{ $id }}" {{ old('checkout_id') == $id ? 'selected' : '' }}>{{ $entry }}</option>
-                    @endforeach
-                </select>
-                @if($errors->has('checkout'))
-                    <span class="text-danger">{{ $errors->first('checkout') }}</span>
-                @endif
-                <span class="help-block">{{ trans('cruds.visitReport.fields.checkout_helper') }}</span>
-            </div>
-            <div class="form-group">
                 <label for="productos">{{ trans('cruds.visitReport.fields.productos') }}</label>
                 <div style="padding-bottom: 4px">
                     <span class="btn btn-info btn-xs select-all" style="border-radius: 0">{{ trans('global.select_all') }}</span>

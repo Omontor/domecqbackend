@@ -28,6 +28,11 @@ class Variante extends Model
         'deleted_at',
     ];
 
+    public function productosVisitReports()
+    {
+        return $this->belongsToMany(VisitReport::class);
+    }
+
     public function marca()
     {
         return $this->belongsTo(Brand::class, 'marca_id');

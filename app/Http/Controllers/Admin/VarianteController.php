@@ -61,7 +61,7 @@ class VarianteController extends Controller
     {
         abort_if(Gate::denies('variante_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $variante->load('marca');
+        $variante->load('marca', 'productosVisitReports');
 
         return view('admin.variantes.show', compact('variante'));
     }

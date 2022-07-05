@@ -25,14 +25,6 @@ class UpdateVisitReportRequest extends FormRequest
                 'required',
                 'integer',
             ],
-            'checkin_id' => [
-                'required',
-                'integer',
-            ],
-            'checkout_id' => [
-                'required',
-                'integer',
-            ],
             'productos.*' => [
                 'integer',
             ],
