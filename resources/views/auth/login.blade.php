@@ -1,26 +1,68 @@
-@extends('layouts.app')
-@section('content')
-<div class="login-box">
-    <div class="login-logo">
-        <div class="login-logo">
-            <a href="{{ route('admin.home') }}">
-                {{ trans('panel.site_title') }}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bitter Mobile Template</title>
+    <link rel="stylesheet" href="/template/assets/css/style.css">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <meta name="description" content="Bitter Mobile Template">
+    <meta name="keywords" content="bootstrap, mobile template, Bootstrap 5, mobile, html, responsive" />
+    <link rel="icon" type="image/png" href="/template/assets/img/icon/favicon.png" sizes="32x32">
+    <link rel="apple-touch-icon" sizes="180x180" href="/template/assets/img/icon/192x192.png">
+</head>
+
+<body>
+
+    <!-- Page loading -->
+    <div id="loading">
+        <div class="spinner-grow"></div>
+    </div>
+    <!-- * Page loading -->
+
+    <!-- App Header -->
+    <div class="appHeader">
+        <div class="left">
+            <a href="javascript:;" class="icon goBack">
+                <i class="icon ion-ios-arrow-back"></i>
             </a>
         </div>
+        <div class="pageTitle">Login</div>
+        <div class="right">
+            <a href="/register" class="link">Registrarse</a>
+        </div>
     </div>
-    <div class="card">
-        <div class="card-body login-card-body">
-            <p class="login-box-msg">
-                {{ trans('global.login') }}
-            </p>
+    <!-- searchBox -->
+    <div id="searchBox">
+        <form>
+            <span class="inputIcon">
+                <i class="icon ion-ios-search"></i>
+            </span>
+            <input type="text" class="form-control" id="searchInput" placeholder="Search...">
+            <a href="javascript:;" class="toggleSearchbox closeButton">
+                <i class="icon ion-ios-close-circle"></i>
+            </a>
+        </form>
+    </div>
+    <!-- * searchBox -->
+    <!-- * App Header -->
 
-            @if(session()->has('message'))
-                <p class="alert alert-info">
-                    {{ session()->get('message') }}
-                </p>
-            @endif
+    <!-- App Capsule -->
+    <div id="appCapsule">
 
-            <form action="{{ route('login') }}" method="POST">
+        <div class="appContent">
+
+
+            <div class="sectionTitle text-center mt-3">
+                <div class="title">
+                    <h1>Bienvenido</h1>
+                </div>
+                <div class="lead mb-2">Inicia Sesión Para Continuar</div>
+            </div>
+
+<form action="{{ route('login') }}" method="POST">
                 @csrf
 
                 <div class="form-group">
@@ -43,7 +85,7 @@
                     @endif
                 </div>
 
-
+<hr>
                 <div class="row">
                     <div class="col-8">
                         <div class="icheck-primary">
@@ -51,29 +93,35 @@
                             <label for="remember">{{ trans('global.remember_me') }}</label>
                         </div>
                     </div>
+                    <br>
+                    <br>
                     <!-- /.col -->
-                    <div class="col-4">
-                        <button type="submit" class="btn btn-primary btn-block btn-flat">
-                            {{ trans('global.login') }}
-                        </button>
-                    </div>
+                                    <div>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">
+                        Sign in
+                    </button>
+                </div>
                     <!-- /.col -->
                 </div>
             </form>
+            <div class="divider mt-3 mb-3"></div>
 
-
-            @if(Route::has('password.request'))
-                <p class="mb-1">
-                    <a href="{{ route('password.request') }}">
-                        {{ trans('global.forgot_password') }}
-                    </a>
-                </p>
-            @endif
-            <p class="mb-1">
-
-            </p>
         </div>
-        <!-- /.login-card-body -->
+
+
     </div>
-</div>
-@endsection
+    <!-- appCapsule -->
+
+
+    <!-- ///////////// Js Files ////////////////////  -->
+    <!-- Bootstrap-->
+    <script src="/template/assets/js/lib/bootstrap.bundle.min.js"></script>
+    <!-- Splide -->
+    <script src="/template/assets/js/plugins/splide/splide.min.js"></script>
+    <!-- Main Js File -->
+    <script src="/template/assets/js/app.js"></script>
+
+
+</body>
+
+</html>
