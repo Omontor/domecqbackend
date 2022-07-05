@@ -89,7 +89,7 @@
                     </li>
                 @endcan
                 @can('visit_management_access')
-                    <li class="nav-item has-treeview {{ request()->is("admin/witnesses*") ? "menu-open" : "" }} {{ request()->is("admin/checkins*") ? "menu-open" : "" }} {{ request()->is("admin/checkouts*") ? "menu-open" : "" }} {{ request()->is("admin/visit-reports*") ? "menu-open" : "" }}">
+                    <li class="nav-item has-treeview {{ request()->is("admin/witnesses*") ? "menu-open" : "" }} {{ request()->is("admin/checkins*") ? "menu-open" : "" }} {{ request()->is("admin/checkouts*") ? "menu-open" : "" }} {{ request()->is("admin/appointments*") ? "menu-open" : "" }} {{ request()->is("admin/visit-reports*") ? "menu-open" : "" }}">
                         <a class="nav-link nav-dropdown-toggle" href="#">
                             <i class="fa-fw nav-icon fas fa-map-pin">
 
@@ -132,6 +132,18 @@
                                         </i>
                                         <p>
                                             {{ trans('cruds.checkout.title') }}
+                                        </p>
+                                    </a>
+                                </li>
+                            @endcan
+                            @can('appointment_access')
+                                <li class="nav-item">
+                                    <a href="{{ route("admin.appointments.index") }}" class="nav-link {{ request()->is("admin/appointments") || request()->is("admin/appointments/*") ? "active" : "" }}">
+                                        <i class="fa-fw nav-icon fas fa-calendar-check">
+
+                                        </i>
+                                        <p>
+                                            {{ trans('cruds.appointment.title') }}
                                         </p>
                                     </a>
                                 </li>

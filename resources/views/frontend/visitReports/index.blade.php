@@ -32,12 +32,6 @@
                                         {{ trans('cruds.visitReport.fields.client') }}
                                     </th>
                                     <th>
-                                        {{ trans('cruds.visitReport.fields.checkin') }}
-                                    </th>
-                                    <th>
-                                        {{ trans('cruds.visitReport.fields.checkout') }}
-                                    </th>
-                                    <th>
                                         {{ trans('cruds.visitReport.fields.productos') }}
                                     </th>
                                     <th>
@@ -56,12 +50,6 @@
                                         </td>
                                         <td>
                                             {{ $visitReport->client->name ?? '' }}
-                                        </td>
-                                        <td>
-                                            {{ $visitReport->checkin->datetime ?? '' }}
-                                        </td>
-                                        <td>
-                                            {{ $visitReport->checkout->datetime ?? '' }}
                                         </td>
                                         <td>
                                             @foreach($visitReport->productos as $key => $item)

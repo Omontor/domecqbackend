@@ -61,6 +61,11 @@ class Client extends Model implements HasMedia
         $this->addMediaConversion('preview')->fit('crop', 120, 120);
     }
 
+    public function clientAppointments()
+    {
+        return $this->hasMany(Appointment::class, 'client_id', 'id');
+    }
+
     public function getLogoAttribute()
     {
         $file = $this->getMedia('logo')->last();

@@ -127,6 +127,11 @@
                                             {{ trans('cruds.visitReport.title') }}
                                         </a>
                                     @endcan
+                                    @can('appointment_access')
+                                        <a class="dropdown-item ml-3" href="{{ route('frontend.appointments.index') }}">
+                                            {{ trans('cruds.appointment.title') }}
+                                        </a>
+                                    @endcan
                                     @can('product_management_access')
                                         <a class="dropdown-item disabled" href="#">
                                             {{ trans('cruds.productManagement.title') }}
