@@ -54,7 +54,7 @@
 
         <div class="appContent pb-0">
 
-            <img src="/template/assets/img/sample/draw-2.png" alt="img" class="img-fluid mt-3 mb-3">
+ <br>
 
             <div class="sectionTitle text-center">
                 <div class="title">

@@ -30,10 +30,7 @@
                             </div>
                             <!-- /.info-box -->
                         </div>
-                        <div class="{{ $chart2->options['column_class'] }}">
-                            <h3>{!! $chart2->options['chart_title'] !!}</h3>
-                            {!! $chart2->renderHtml() !!}
-                        </div>
+
                         <div class="{{ $settings3['column_class'] }}">
                             <div class="info-box">
                                 <span class="info-box-icon bg-red" style="display:flex; flex-direction: column; justify-content: center;">
