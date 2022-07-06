@@ -12,6 +12,8 @@
     <meta name="keywords" content="bootstrap, mobile template, Bootstrap 5, mobile, html, responsive" />
     <link rel="icon" type="image/png" href="/template/assets/img/icon/favicon.png" sizes="32x32">
     <link rel="apple-touch-icon" sizes="180x180" href="/template/assets/img/icon/192x192.png">
+<script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
 </head>
 
 <body>
@@ -30,7 +32,7 @@
             </a>
         </div>
         <div class="pageTitle">
-            <img src="assets/img/logo.png" alt="Bitter" class="image">
+            <img src="/template/assets/img/logo.png" alt="Bitter" class="image">
         </div>
         <div class="right">
             <label for="searchInput" class="mb-0 icon toggleSearchbox">
@@ -99,105 +101,8 @@
 
 
     @include('partials.nav')
+    @include('partials.sidemenu')
 
-    <!-- Sidebar Menu -->
-    <div class="offcanvas offcanvas-start sidebarWrapper" tabindex="-1" id="appSidebar">
-        <div class="offcanvas-body">
-            <nav class="sidebar">
-                <div class="profilebox">
-                    <img src="assets/img/sample/avatar.jpg" alt="avatar" class="avatar">
-                    <h2 class="title">Jane Antunes</h2>
-                    <h5 class="lead">
-                        <i class="icon ion-ios-pin me-1"></i>
-                        Chicago
-                    </h5>
-                    <div class="sidebutton">
-                        <a href="#">
-                            <i class="icon ion-ios-settings"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="sidebarGroup">
-                    <ul class="sidebarMenu">
-                        <li>
-                            <a href="social-home.html">
-                                <i class="icon ion-ios-people"></i>
-                                Social
-                            </a>
-                        </li>
-                        <li>
-                            <a href="social-chat.html">
-                                <i class="icon ion-ios-chatboxes"></i>
-                                Chat
-                            </a>
-                        </li>
-                        <li>
-                            <a href="pages.html">
-                                <i class="icon ion-ios-apps"></i>
-                                Pages
-                            </a>
-                        </li>
-                        <li>
-                            <a href="components.html">
-                                <i class="icon ion-ios-analytics"></i>
-                                Components
-                            </a>
-                        </li>
-                        <li>
-                            <a href="blog-home.html">
-                                <i class="icon ion-ios-book"></i>
-                                Magazine - Blog
-                            </a>
-                        </li>
-                        <li>
-                            <a href="page-login.html">
-                                <i class="icon ion-ios-lock"></i>
-                                Login
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="sidebarGroup">
-                    <ul class="sidebarMenu">
-                        <li class="title">Online</li>
-                        <li>
-                            <a href="#">
-                                <img src="assets/img/sample/avatar2.jpg" alt="avatar" class="avatar">
-                                Guiying K.
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="assets/img/sample/avatar3.jpg" alt="avatar" class="avatar">
-                                Kita Chihoko
-                                <span class="badge badge-primary">2</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="assets/img/sample/avatar4.jpg" alt="avatar" class="avatar">
-                                Leonetta Lloyd
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="assets/img/sample/avatar5.jpg" alt="avatar" class="avatar">
-                                Lizzie Rose
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="assets/img/sample/avatar6.jpg" alt="avatar" class="avatar">
-                                Kari Granleese
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-            </nav>
-        </div>
-    </div>
-    <!-- * Sidebar Menu -->
 
 
     <!-- ///////////// Js Files ////////////////////  -->
@@ -208,6 +113,7 @@
     <!-- Main Js File -->
     <script src="/template/assets/js/app.js"></script>
 
+    @yield('scripts')
 
 </body>
 

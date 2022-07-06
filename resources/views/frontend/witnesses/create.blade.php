@@ -68,6 +68,7 @@
 
 @section('scripts')
 <script>
+
     Dropzone.options.witnessDropzone = {
     url: '{{ route('frontend.witnesses.storeMedia') }}',
     maxFilesize: 10, // MB

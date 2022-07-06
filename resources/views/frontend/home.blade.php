@@ -9,113 +9,30 @@
                 <div class="splide__track">
                     <ul class="splide__list">
                         <!-- slide -->
+                    @forelse($posts as $post)
+
                         <li class="splide__slide">
                             <a href="blog-post.html" class="card card-overlay text-white">
-                                <img src="/template/assets/img/sample/photo8.jpg" class="card-img img-fluid" alt="image">
+                                <img src="{{$post->thumb_image->getUrl()}}" class="card-img img-fluid" alt="image">
                                 <div class="card-img-overlay">
-                                    <div class="header row">
-                                        <div class="col-8">TRAVEL</div>
-                                        <div class="col-4 text-end">
-                                            <i class="icon ion-ios-heart"></i> 523
-                                        </div>
-                                    </div>
+
                                     <div class="content">
-                                        <h1>Top 10 Travel Bloggers You Should Already Be Following</h1>
+                                        <h1>{{$post->title}}</h1>
                                         <footer>
                                             <div class="author">
                                                 <img src="/template/assets/img/sample/avatar3.jpg" alt="avatar">
-                                                Marti Valencia
+                                                Domecq
                                             </div>
                                             <div class="date">
-                                                5 hours ago
+                                                {{$post->created_at->diffForHumans()}}
                                             </div>
                                         </footer>
                                     </div>
                                 </div>
                             </a>
                         </li>
-                        <!-- * slide -->
-                        <!-- slide -->
-                        <li class="splide__slide">
-                            <a href="blog-post.html" class="card card-overlay text-white">
-                                <img src="/template/assets/img/sample/photo5.jpg" class="card-img img-fluid" alt="image">
-                                <div class="card-img-overlay">
-                                    <div class="header row">
-                                        <div class="col-8">EVENTS</div>
-                                        <div class="col-4 text-end">
-                                            <i class="icon ion-ios-heart"></i> 12K
-                                        </div>
-                                    </div>
-                                    <div class="content">
-                                        <h1>The World's Largest Pillow Fight is Also a Festival</h1>
-                                        <footer>
-                                            <div class="author">
-                                                <img src="/template/assets/img/sample/avatar.jpg" alt="avatar">
-                                                Sofie Fulloway
-                                            </div>
-                                            <div class="date">
-                                                2 hours ago
-                                            </div>
-                                        </footer>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <!-- * slide -->
-                        <!-- slide -->
-                        <li class="splide__slide">
-                            <a href="blog-post.html" class="card card-overlay text-white">
-                                <img src="/template/assets/img/sample/photo11.jpg" class="card-img img-fluid" alt="image">
-                                <div class="card-img-overlay">
-                                    <div class="header row">
-                                        <div class="col-8">SPORTS</div>
-                                        <div class="col-4 text-end">
-                                            <i class="icon ion-ios-heart"></i> 12K
-                                        </div>
-                                    </div>
-                                    <div class="content">
-                                        <h1>Juxon Julio praises Peri’s resilience after testing week</h1>
-                                        <footer>
-                                            <div class="author">
-                                                <img src="/template/assets/img/sample/avatar5.jpg" alt="avatar">
-                                                Jackie Pearson
-                                            </div>
-                                            <div class="date">
-                                                2 hours ago
-                                            </div>
-                                        </footer>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <!-- * slide -->
-                        <!-- slide -->
-                        <li class="splide__slide">
-                            <a href="blog-post.html" class="card card-overlay text-white">
-                                <img src="/template/assets/img/sample/photo10.jpg" class="card-img img-fluid" alt="image">
-                                <div class="card-img-overlay">
-                                    <div class="header row">
-                                        <div class="col-8">WORLD</div>
-                                        <div class="col-4 text-end">
-                                            <i class="icon ion-ios-heart"></i> 12K
-                                        </div>
-                                    </div>
-                                    <div class="content">
-                                        <h1>Best of Skyscrapers in the World</h1>
-                                        <footer>
-                                            <div class="author">
-                                                <img src="/template/assets/img/sample/avatar6.jpg" alt="avatar">
-                                                Vincent Hunt
-                                            </div>
-                                            <div class="date">
-                                                2 hours ago
-                                            </div>
-                                        </footer>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <!-- * slide -->
+                       @empty
+                       @endforelse
                     </ul>
                 </div>
             </div>
