@@ -84,4 +84,16 @@ class User extends Authenticatable
     {
         return $date->format('Y-m-d H:i:s');
     }
+
+    public function appointment()
+    {
+        return $this->hasMany(Appointment::class, 'executive_id', 'id');
+    }
+
+    public function client()
+    {
+        return $this->belongsTo(Client::class, 'id','ejecutivo_id');
+    }
+
+
 }

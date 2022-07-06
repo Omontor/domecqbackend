@@ -1,33 +1,33 @@
     <!-- App Bottom Menu -->
     <div class="appBottomMenu">
         <div class="item active">
-            <a href="index.html">
+            <a href="#">
                 <p>
-                    <i class="icon ion-ios-water"></i>
+                    <i class="icon ion-ios-home"></i>
                     <span>Inicio</span>
                 </p>
             </a>
         </div>
         <div class="item">
-            <a href="pages.html">
+            <a href="#">
                 <p>
-                    <i class="icon ion-ios-apps"></i>
+                    <i class="icon ion-ios-paper"></i>
                     <span>Noticias</span>
                 </p>
             </a>
         </div>
         <div class="item">
-            <a href="components.html">
+            <a href="#">
                 <p>
-                    <i class="icon ion-ios-analytics"></i>
+                    <i class="icon ion-ios-calendar"></i>
                     <span>Citas</span>
                 </p>
             </a>
         </div>
         <div class="item">
-            <a href="search.html">
+            <a href="#">
                 <p>
-                    <i class="icon ion-ios-search"></i>
+                    <i class="icon ion-ios-text"></i>
                     <span>Mensajes</span>
                 </p>
             </a>

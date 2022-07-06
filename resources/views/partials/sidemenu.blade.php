@@ -4,10 +4,10 @@
             <nav class="sidebar">
                 <div class="profilebox">
                     <img src="/template/assets/img/sample/avatar.jpg" alt="avatar" class="avatar">
-                    <h2 class="title">Jane Antunes</h2>
+                    <h2 class="title">{{auth()->user()->name}}</h2>
                     <h5 class="lead">
-                        <i class="icon ion-ios-pin me-1"></i>
-                        Chicago
+                        <i class="icon ion-ios-mail me-1"></i>
+                        {{auth()->user()->email}}
                     </h5>
                     <div class="sidebutton">
                         <a href="#">
@@ -18,79 +18,43 @@
                 <div class="sidebarGroup">
                     <ul class="sidebarMenu">
                         <li>
-                            <a href="social-home.html">
-                                <i class="icon ion-ios-people"></i>
-                                Social
+                            <a href="#">
+                                <i class="icon ion-ios-home"></i>
+                                Inicio
                             </a>
                         </li>
                         <li>
-                            <a href="social-chat.html">
-                                <i class="icon ion-ios-chatboxes"></i>
-                                Chat
+                            <a href="#">
+                                <i class="icon ion-ios-paper"></i>
+                                Noticias
                             </a>
                         </li>
                         <li>
-                            <a href="pages.html">
-                                <i class="icon ion-ios-apps"></i>
-                                Pages
+                            <a href="#">
+                                <i class="icon ion-ios-calendar"></i>
+                                Citas
                             </a>
                         </li>
                         <li>
-                            <a href="components.html">
-                                <i class="icon ion-ios-analytics"></i>
-                                Components
+                            <a href="#">
+                                <i class="icon ion-ios-text"></i>
+                                Mensajes
                             </a>
                         </li>
                         <li>
-                            <a href="blog-home.html">
-                                <i class="icon ion-ios-book"></i>
-                                Magazine - Blog
+                            <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                <i class="icon ion-ios-lock" style="color: red;"></i>
+                                Logout
                             </a>
                         </li>
-                        <li>
-                            <a href="page-login.html">
-                                <i class="icon ion-ios-lock"></i>
-                                Login
-                            </a>
-                        </li>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
                     </ul>
                 </div>
-                <div class="sidebarGroup">
-                    <ul class="sidebarMenu">
-                        <li class="title">Online</li>
-                        <li>
-                            <a href="#">
-                                <img src="/template/assets/img/sample/avatar2.jpg" alt="avatar" class="avatar">
-                                Guiying K.
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="/template/assets/img/sample/avatar3.jpg" alt="avatar" class="avatar">
-                                Kita Chihoko
-                                <span class="badge badge-primary">2</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="/template/assets/img/sample/avatar4.jpg" alt="avatar" class="avatar">
-                                Leonetta Lloyd
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="/template/assets/img/sample/avatar5.jpg" alt="avatar" class="avatar">
-                                Lizzie Rose
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="/template/assets/img/sample/avatar6.jpg" alt="avatar" class="avatar">
-                                Kari Granleese
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+
 
             </nav>
         </div>

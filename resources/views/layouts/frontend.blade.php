@@ -32,7 +32,7 @@
             </a>
         </div>
         <div class="pageTitle">
-            <img src="/template/assets/img/logo.png" alt="Bitter" class="image">
+           {{env('APP_NAME')}}
         </div>
         <div class="right">
             <label for="searchInput" class="mb-0 icon toggleSearchbox">
@@ -64,9 +64,9 @@
 </div>
 <!-- app Footer -->
         <footer class="appFooter">
-            <div class="heading">Copyright © Bitter. All Rights Reserved.</div>
+            <div class="heading">Domecq App</div>
             <p>
-                Modern, simple and elegant design for mobile devices. Based on Bootstrap.
+                {{Carbon\Carbon::now()->format('F-Y')}}
             </p>
             {{--
             <!-- facebook -->
@@ -104,7 +104,7 @@
     @include('partials.sidemenu')
 
 
-
+<br>
     <!-- ///////////// Js Files ////////////////////  -->
     <!-- Bootstrap-->
     <script src="/template/assets/js/lib/bootstrap.bundle.min.js"></script>
