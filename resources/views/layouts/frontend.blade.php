@@ -4,7 +4,10 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Bitter Mobile Template</title>
+    <title>
+        @yield('title')
+    </title>
+    @yield('styles')
     <link rel="stylesheet" href="/template/assets/css/style.css">
     <meta name="viewport"
         content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />

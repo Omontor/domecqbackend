@@ -1,5 +1,7 @@
 @extends('layouts.frontend')
-
+@section('title')
+Inicio
+@endsection
 @section('content')
 
 
@@ -44,7 +46,7 @@
             <div class="sectionTitle mb-2 mt-4">
                 <div class="title">
                     <h1>Mis Citas</h1>
-                    <a href="#">Ver Todas</a>
+                    <a href="{{route('frontend.appointments.index')}}">Ver Todas</a>
                 </div>
             </div>
             <div class="carousel-multiple postCarousel splide">
@@ -53,10 +55,10 @@
                         <!-- slide -->
                         @foreach(auth()->user()->appointment as $appointment)
                         <li class="splide__slide">
-                            <a href="#">
+                            <a href="{{route('frontend.appointments.show', $appointment)}}">
                                 <img src="/images/calendar.png" alt="image" class="image">
-                                <h2 class="title">{{$appointment->title}}</h2>
-                                <h2 class="subtitle">{{$appointment->client->name}}</h2>
+                                <h2 class="title">{{$appointment->client->name}}</h2>
+                                <h2 class="subtitle">{{$appointment->title}}</h2>
                                 <h2 class="title">{{\Carbon\Carbon::parse($appointment->date)->diffForHumans()}}</h2>
                             </a>
                         </li>
@@ -78,7 +80,7 @@
                 <div class="title">
                     <h1>Tus Clientes</h1>
 
-                    <a href="#">Ver Todos</a>
+                    <a href="{{route('frontend.clients.index')}}">Ver Todos</a>
                 </div>
             </div>
             <!-- Button Carousel -->

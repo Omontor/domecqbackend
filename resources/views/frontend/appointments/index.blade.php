@@ -1,4 +1,7 @@
 @extends('layouts.frontend')
+@section('title')
+Citas
+@endsection
 @section('content')
 <div class="container">
     <div class="row justify-content-center">

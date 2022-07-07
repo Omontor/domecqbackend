@@ -1,7 +1,7 @@
     <!-- App Bottom Menu -->
     <div class="appBottomMenu">
         <div class="item active">
-            <a href="#">
+            <a href="/home">
                 <p>
                     <i class="icon ion-ios-home"></i>
                     <span>Inicio</span>
@@ -9,7 +9,7 @@
             </a>
         </div>
         <div class="item">
-            <a href="#">
+            <a href="{{route('frontend.blogs.index')}}">
                 <p>
                     <i class="icon ion-ios-paper"></i>
                     <span>Noticias</span>
@@ -17,7 +17,7 @@
             </a>
         </div>
         <div class="item">
-            <a href="#">
+            <a href="{{route('frontend.appointments.index')}}">
                 <p>
                     <i class="icon ion-ios-calendar"></i>
                     <span>Citas</span>
@@ -25,10 +25,10 @@
             </a>
         </div>
         <div class="item">
-            <a href="#">
+            <a href="{{route('frontend.profile.index')}}">
                 <p>
-                    <i class="icon ion-ios-text"></i>
-                    <span>Mensajes</span>
+                    <i class="icon ion-ios-person"></i>
+                    <span>Mi Perfil</span>
                 </p>
             </a>
         </div>

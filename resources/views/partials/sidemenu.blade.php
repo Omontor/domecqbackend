@@ -18,27 +18,27 @@
                 <div class="sidebarGroup">
                     <ul class="sidebarMenu">
                         <li>
-                            <a href="#">
+                            <a href="/home">
                                 <i class="icon ion-ios-home"></i>
                                 Inicio
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="{{route('frontend.blogs.index')}}">
                                 <i class="icon ion-ios-paper"></i>
                                 Noticias
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="{{route('frontend.appointments.index')}}">
                                 <i class="icon ion-ios-calendar"></i>
                                 Citas
                             </a>
                         </li>
                         <li>
-                            <a href="#">
-                                <i class="icon ion-ios-text"></i>
-                                Mensajes
+                            <a href="{{route('frontend.profile.index')}}">
+                                <i class="icon ion-ios-person"></i>
+                                Mi Perfil
                             </a>
                         </li>
                         <li>
