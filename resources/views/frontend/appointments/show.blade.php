@@ -63,10 +63,7 @@
                     <br>
                     <a href="{{route('frontend.witnesses.appointment', $appointment->id)}}" class="btn btn-block btn-primary">Capturar Fotografías</a>
                     <br>
-                    <br>
-                    <a href="#" class="btn btn-block btn-primary">Llenar formulario</a>
-                    <br>
-                    <br>
+
                 </div>
             </div>
 @section('scripts')
