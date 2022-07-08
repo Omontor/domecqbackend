@@ -51,7 +51,7 @@ class WitnessController extends Controller
             Media::whereIn('id', $media)->update(['model_id' => $witness->id]);
         }
 
-        return redirect()->route('frontend.witnesses.index');
+        return redirect()->to('/appointments/'.$request->appointment_id)->with(['message' => 'Imagen Cargada Correctamente', 'alert' => 'alert-success']);
     }
 
     public function edit(Witness $witness)
@@ -120,5 +120,15 @@ class WitnessController extends Controller
         $media         = $model->addMediaFromRequest('upload')->toMediaCollection('ck-media');
 
         return response()->json(['id' => $media->id, 'url' => $media->getUrl()], Response::HTTP_CREATED);
+    }
+
+    public function appointmentwitness($id){
+
+        $witness_categories = WitnessCategory::pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+
+        $appointments = Appointment::find($id)->pluck('title', 'id')->prepend(trans('global.pleaseSelect'), '');
+
+        return view('frontend.witnesses.create', compact('appointments', 'witness_categories'));
+
     }
 }

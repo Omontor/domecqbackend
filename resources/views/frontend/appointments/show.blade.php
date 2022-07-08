@@ -61,7 +61,7 @@
                     <a href="{{route('frontend.checkouts.appointmentcheckout', $appointment->id)}}" class="btn btn-block btn-primary">Hacer Checkout</a>
                     <br>
                     <br>
-                    <a href="#" class="btn btn-block btn-primary">Capturar Fotografías</a>
+                    <a href="{{route('frontend.witnesses.appointment', $appointment->id)}}" class="btn btn-block btn-primary">Capturar Fotografías</a>
                     <br>
                     <br>
                     <a href="#" class="btn btn-block btn-primary">Llenar formulario</a>

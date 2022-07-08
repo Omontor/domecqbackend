@@ -1,15 +1,6 @@
 @extends('layouts.frontend')
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-12">
-
-            <div class="card">
-                <div class="card-header">
-                    {{ trans('global.create') }} {{ trans('cruds.witness.title_singular') }}
-                </div>
-
-                <div class="card-body">
+<br>
                     <form method="POST" action="{{ route("frontend.witnesses.store") }}" enctype="multipart/form-data">
                         @method('POST')
                         @csrf
@@ -53,21 +44,18 @@
                             <span class="help-block">{{ trans('cruds.witness.fields.appointment_helper') }}</span>
                         </div>
                         <div class="form-group">
-                            <button class="btn btn-danger" type="submit">
+                            <button class="btn btn-block btn-success" type="submit">
                                 {{ trans('global.save') }}
                             </button>
                         </div>
                     </form>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div>
 @endsection
 
 @section('scripts')
 <script>
+
+
+
 
     Dropzone.options.witnessDropzone = {
     url: '{{ route('frontend.witnesses.storeMedia') }}',

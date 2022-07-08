@@ -194,6 +194,8 @@ Route::group(['as' => 'frontend.', 'namespace' => 'Frontend', 'middleware' => ['
     Route::post('witnesses/media', 'WitnessController@storeMedia')->name('witnesses.storeMedia');
     Route::post('witnesses/ckmedia', 'WitnessController@storeCKEditorImages')->name('witnesses.storeCKEditorImages');
     Route::resource('witnesses', 'WitnessController');
+    Route::get('appointmentwitness/{id}', 'WitnessController@appointmentwitness')->name('witnesses.appointment');
+
 
     // Checkin
     Route::delete('checkins/destroy', 'CheckinController@massDestroy')->name('checkins.massDestroy');
