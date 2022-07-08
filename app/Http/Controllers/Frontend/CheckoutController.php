@@ -7,6 +7,7 @@ use App\Http\Requests\MassDestroyCheckoutRequest;
 use App\Http\Requests\StoreCheckoutRequest;
 use App\Http\Requests\UpdateCheckoutRequest;
 use App\Models\Checkout;
+use App\Models\Appointment;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -33,7 +34,8 @@ class CheckoutController extends Controller
     {
         $checkout = Checkout::create($request->all());
 
-        return redirect()->route('frontend.checkouts.index');
+        return redirect()->to('/appointments/'.$request->appointment)->with(['message' => 'Checkout Registrado Correctamente', 'alert' => 'alert-success']);
+    
     }
 
     public function edit(Checkout $checkout)
@@ -71,5 +73,11 @@ class CheckoutController extends Controller
         Checkout::whereIn('id', request('ids'))->delete();
 
         return response(null, Response::HTTP_NO_CONTENT);
+    }
+
+        public function appointmentcheckout($id){
+
+        $appointment = Appointment::find($id);
+        return view('frontend.checkouts.create', compact('appointment'));
     }
 }

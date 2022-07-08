@@ -61,6 +61,13 @@
     <!-- App Capsule -->
     <div id="appCapsule">
         <div class="appContent">
+
+            @if(session()->has('message'))
+            <br>
+            <div class="alert {{session('alert') ?? 'alert-info'}}">
+                {{ session('message') }}
+            </div>
+ @endif
             @yield('content')
         </div>
 

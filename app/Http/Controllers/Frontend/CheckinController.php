@@ -7,6 +7,7 @@ use App\Http\Requests\MassDestroyCheckinRequest;
 use App\Http\Requests\StoreCheckinRequest;
 use App\Http\Requests\UpdateCheckinRequest;
 use App\Models\Checkin;
+use App\Models\Appointment;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -33,7 +34,7 @@ class CheckinController extends Controller
     {
         $checkin = Checkin::create($request->all());
 
-        return redirect()->route('frontend.checkins.index');
+        return redirect()->to('/appointments/'.$request->appointment)->with(['message' => 'Checkin Registrado Correctamente', 'alert' => 'alert-success']);
     }
 
     public function edit(Checkin $checkin)
@@ -71,5 +72,11 @@ class CheckinController extends Controller
         Checkin::whereIn('id', request('ids'))->delete();
 
         return response(null, Response::HTTP_NO_CONTENT);
+    }
+
+    public function appointmentcheckin($id){
+
+        $appointment = Appointment::find($id);
+        return view('frontend.checkins.create', compact('appointment'));
     }
 }

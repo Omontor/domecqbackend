@@ -198,10 +198,12 @@ Route::group(['as' => 'frontend.', 'namespace' => 'Frontend', 'middleware' => ['
     // Checkin
     Route::delete('checkins/destroy', 'CheckinController@massDestroy')->name('checkins.massDestroy');
     Route::resource('checkins', 'CheckinController');
+    Route::get('checkinsappointment/{id}', 'CheckinController@appointmentcheckin')->name('checkins.appointmentcheckin');
 
     // Checkout
     Route::delete('checkouts/destroy', 'CheckoutController@massDestroy')->name('checkouts.massDestroy');
     Route::resource('checkouts', 'CheckoutController');
+    Route::get('checkoutsappointment/{id}', 'CheckoutController@appointmentcheckout')->name('checkouts.appointmentcheckout');
 
     // Client
     Route::delete('clients/destroy', 'ClientController@massDestroy')->name('clients.massDestroy');
