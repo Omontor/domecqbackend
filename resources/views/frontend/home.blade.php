@@ -14,7 +14,7 @@ Inicio
                     @forelse($posts as $post)
 
                         <li class="splide__slide">
-                            <a href="#" class="card card-overlay text-white">
+                            <a href="{{route('frontend.blogs.show', $post)}}" class="card card-overlay text-white">
                                 <img src="{{$post->thumb_image->getUrl()}}" class="card-img img-fluid" alt="image">
                                 <div class="card-img-overlay">
 
