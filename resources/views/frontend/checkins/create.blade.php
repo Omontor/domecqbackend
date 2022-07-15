@@ -14,7 +14,7 @@ Checkin
                     </div>
                 <div class="card-body">
                     <h5 class="card-title">Tu ubicación actual</h5>
-                    <p class="card-text">Solo podrás hacer checkin si te encuentras a menos de 50 metros de la dirección del cliente</p>
+                    <p class="card-text">Solo podrás hacer checkin si te encuentras en la ubicación exacta del cliente</p>
                         <form method="POST" action="{{ route("frontend.checkins.store") }}" enctype="multipart/form-data">
                         @method('POST')
                         @csrf
@@ -70,7 +70,7 @@ Checkin
 // Initialize and add the map
 function initMap() {
   // The location of Uluru
-  const uluru = { lat: 19.384900669182226, lng: -99.16647046806497};
+  const uluru = { lat: 21.089673186439846, lng: -86.77029743910538};
   // The map, centered at Uluru
   const map = new google.maps.Map(document.getElementById("dvMap"), {
     zoom: 14,
